@@ -8,7 +8,10 @@ var Video = new Schema ({
         Text : String,
         StartTime : Number,
         EndTime : Number,
-        Location : String
+        Location : {
+            top : Number,
+            left : Number
+        }
     }]
 });
 

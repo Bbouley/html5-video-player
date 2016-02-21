@@ -10,8 +10,16 @@ function minVol (vol) {
     };
 };
 
-function logTime (videoElement) {
-    var time = element.get(0).currentTime
+function getCurrentTime(videoElement) {
+    return videoElement.get(0).currentTime;
+};
+
+function createAnnotation(text, startTime, endTime) {
+    return {
+        annotationEl : '<p class="annotation">' + text + '<p>',
+        startTime : startTime,
+        endTime : startTime + 5
+    };
 };
 
 function timeToPercent (videoElement) {
