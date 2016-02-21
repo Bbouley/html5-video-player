@@ -1,11 +1,15 @@
 $(document).on('ready', function() {
 
+    var interval;
+
     $('#play').on('click', function() {
         $('#mainVideo').get(0).play();
+        seek(interval);
     });
 
     $('#pause').on('click', function() {
         $('#mainVideo').get(0).pause();
+        clear(interval);
     });
 
     $('#volumeUp').on('click', function() {
@@ -31,13 +35,20 @@ $(document).on('ready', function() {
         $('#mainVideo').get(0).play();
     });
 
+    // *** Helpers for scoped interval *** //
+
+    function seek() {
+        interval = setInterval(function() {
+            moveSeeker($('#mainVideo'), $('#seekingTracker'))
+            console.log('things');
+        }, 500);
+    };
+
+    function clear() {
+        return clearInterval(interval);
+    };
+
 });
-
-setInterval(function() {
-    moveSeeker($('#mainVideo'), $('#seekingTracker'))
-}, 500);
-
-// percentToSeekingLocation(3, $('#seekingTracker'));
 
 
 
