@@ -1,0 +1,22 @@
+{
+  "name": "html5-video-player",
+  "version": "1.0.0",
+  "description": "HTML5 Video Player",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Bbouley/html5-video-player.git"
+  },
+  "author": "Bradley Bouley <bradleyjamesbouley@gmail.com> (www.bbouley.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bbouley/html5-video-player/issues"
+  },
+  "homepage": "https://github.com/Bbouley/html5-video-player#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
