@@ -62,3 +62,10 @@ Build a player interface for an HTML5 video control that implements basic functi
  - Add functionality to timeline seeking section
  - Add function to allow placement of annotations
    - Will put certain part of div where user clicks?
+
+
+### Issues during development
+
+ - Error when setting static directory, used app.use when it should have been app.set
+
+
