@@ -34,7 +34,7 @@ $(document).on('ready', function() {
 });
 
 // setInterval(function() {
-//     testTime($('#mainVideo'));
+//     timeToPercent($('#mainVideo'));
 // }, 500);
 
 

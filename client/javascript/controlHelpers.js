@@ -11,7 +11,11 @@ function minVol (vol) {
     };
 };
 
-function logTime (element) {
+function logTime (videoElement) {
     var time = element.get(0).currentTime
+};
+
+function timeToPercent (videoElement) {
+    var duration = videoElement.get(0).duration;
 };
 
