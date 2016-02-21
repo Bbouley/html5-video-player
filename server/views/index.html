@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>{{Title}}</title>
+    <link rel="stylesheet" type="text/css" href="./styles/stylesheet.css">
 </head>
 <body>
 
-    <h1>This is the index html page</h1>
+    <h1>Videos For Days</h1>
+
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="Restart">Restart</button>
+    <button id="volumeUp">Volume +</button>
+    <button id="volumeDown">Volume -</button>
+
+
+    <video width="500" height="300" src="http://video.bbemaildelivery.com/698ef524-730d-4afa-9e78-aea9d16ecf9f_LowDesktop.mp4" id="mainVideo">
+        Your browser doesn't support the video tag.
+    </video>
+
+    <div class="message"></div>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="./javascript/controlHelpers.js"></script>
+<script src="./javascript/main.js"></script>
 
 </body>
 </html>
