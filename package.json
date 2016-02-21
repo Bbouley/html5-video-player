@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/Bbouley/html5-video-player#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.4",
+    "path": "^0.12.7",
+    "swig": "^1.4.2"
   }
 }
