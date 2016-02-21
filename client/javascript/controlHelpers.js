@@ -11,3 +11,7 @@ function minVol (vol) {
     };
 };
 
+function logTime (element) {
+    var time = element.get(0).currentTime
+};
+

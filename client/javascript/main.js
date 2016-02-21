@@ -33,6 +33,10 @@ $(document).on('ready', function() {
 
 });
 
+// setInterval(function() {
+//     testTime($('#mainVideo'));
+// }, 500);
+
 
 
 
