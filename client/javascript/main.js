@@ -26,6 +26,11 @@ $(document).on('ready', function() {
         }
     });
 
+    $('#restart').on('click', function() {
+        $('#mainVideo').get(0).currentTime = 0;
+        $('#mainVideo').get(0).play();
+    });
+
 });
 
 
