@@ -12,6 +12,7 @@
     background-color: red;
     z-index: 2;
     position: fixed;
+    /*display: none;*/
 }
 
 #mainVideo {

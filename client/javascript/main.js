@@ -1,17 +1,20 @@
 $(document).on('ready', function() {
     var interval;
+    var interval2;
     var video = new Video('testTitle', $('#mainVideo').attr('src'))
 
 
     $('#play').on('click', function() {
         $('#mainVideo').get(0).play();
         seek(interval);
+        annotationIntStart();
     });
 
 
     $('#pause').on('click', function() {
         $('#mainVideo').get(0).pause();
         clear(interval);
+        annotationIntClear()
     });
 
 
@@ -47,7 +50,7 @@ $(document).on('ready', function() {
         var time = getCurrentTime($('#mainVideo'));
         var annotation = createAnnotation(text, time);
         video.addAnnotation(annotation);
-        video.displayAnnotation($('.message'));
+        $('#annotationText').val('')
     });
 
 
@@ -63,6 +66,19 @@ $(document).on('ready', function() {
 
     function clear() {
         return clearInterval(interval);
+    };
+
+    function annotationIntStart() {
+        var messageEl = $('.message');
+        var videoEl = $('#mainVideo');
+        interval2 = setInterval(function() {
+             $('.annotation').remove();
+            video.displayAnnotation(messageEl, videoEl);
+        }, 500);
+    };
+
+    function annotationIntClear() {
+        return clearInterval(interval2)
     };
 
 });

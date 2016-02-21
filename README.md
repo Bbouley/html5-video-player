@@ -68,4 +68,8 @@ Build a player interface for an HTML5 video control that implements basic functi
 
  - Error when setting static directory, used app.use when it should have been app.set
 
+- Tracker - logic behind percentages and moving the tracker
 
+- Appending annotations - displaying over video html
+
+- Appending annotations - filtering time to display annotations at that time
