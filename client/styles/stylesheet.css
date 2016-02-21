@@ -1,11 +1,11 @@
-.seekingBar {
+#seekingBar {
     height : 30px;
     width : 500px;
     border : black 1px solid;
     position : relative;
 }
 
-.seekingTracker {
+#seekingTracker {
     height : 30px;
     width : 10px;
     background-color: red;

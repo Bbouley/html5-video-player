@@ -5,7 +5,6 @@ function maxVol (vol) {
 };
 
 function minVol (vol) {
-    console.log(vol);
     if (vol < 0.05) {
         return true
     };
@@ -16,6 +15,19 @@ function logTime (videoElement) {
 };
 
 function timeToPercent (videoElement) {
+    var currentTime = videoElement.get(0).currentTime;
     var duration = videoElement.get(0).duration;
+    var percentTime = (currentTime/duration) * 100;
+    return percentTime.toFixed(1);
 };
 
+function percentToLocation (percent, seekingElement) {
+    var seekingElementPosition = seekingElement.position().left;
+    var newPosition = (percent/100) * 490;
+    return seekingElement.css({left : newPosition});
+}
+
+function moveSeeker (videoElement, seekingElement) {
+    var percent = timeToPercent (videoElement);
+    return percentToLocation (percent, seekingElement);
+};

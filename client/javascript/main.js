@@ -33,10 +33,11 @@ $(document).on('ready', function() {
 
 });
 
-// setInterval(function() {
-//     timeToPercent($('#mainVideo'));
-// }, 500);
+setInterval(function() {
+    moveSeeker($('#mainVideo'), $('#seekingTracker'))
+}, 500);
 
+// percentToSeekingLocation(3, $('#seekingTracker'));
 
 
 
