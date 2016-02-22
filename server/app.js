@@ -54,7 +54,10 @@ app.use('/', index);
 
 // *** Server *** //
 
-app.listen(3000, function() {
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+app.listen(port, function() {
     console.log('server listening on port 3000');
 });
 
