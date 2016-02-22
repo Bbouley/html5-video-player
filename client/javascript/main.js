@@ -56,10 +56,6 @@ $(document).on('ready', function() {
         disableButtons(buttons);
          $('#annotationHolder').on('click', function(event) {
             event.preventDefault();
-
-            if($('#annotationText').val() === '') {
-                $('.message').text('Message Can\'t Be Blank!!!');
-            } else {
                  var locObj = {
                     left : event.pageX,
                     top : event.pageY
@@ -72,7 +68,6 @@ $(document).on('ready', function() {
                 $('#annotationText').val('')
                 $('.message').text('Now Submit!!');
                 $('#finalSubmit').show()
-            }
         });
     });
 
@@ -84,8 +79,8 @@ $(document).on('ready', function() {
         enableButtons(buttons);
         $('#submitAnnotation').show();
         $('#annotationHolder').off('click', function() {
-
         });
+        console.log('click removed');
     });
 
 
