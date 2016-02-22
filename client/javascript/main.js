@@ -22,6 +22,7 @@ $(document).on('ready', function() {
 
 
     $('#volumeUp').on('click', function() {
+        $('.message').text('');
         if(maxVol($('#mainVideo').get(0).volume) === true) {
             $('.message').text('Volume Is Already At MAX');
         } else {
