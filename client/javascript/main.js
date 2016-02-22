@@ -56,27 +56,35 @@ $(document).on('ready', function() {
         disableButtons(buttons);
          $('#annotationHolder').on('click', function(event) {
             event.preventDefault();
-            var locObj = {
-                left : event.pageX,
-                top : event.pageY
+
+            if($('#annotationText').val() === '') {
+                $('.message').text('Message Can\'t Be Blank!!!');
+            } else {
+                 var locObj = {
+                    left : event.pageX,
+                    top : event.pageY
+                }
+                var text = $('#annotationText').val().trim();
+                var time = getCurrentTime($('#mainVideo'));
+
+                video.createAnnotation(text, time, locObj)
+
+                $('#annotationText').val('')
+                $('.message').text('Now Submit!!');
+                $('#finalSubmit').show()
             }
-            var text = $('#annotationText').val().trim();
-            var time = getCurrentTime($('#mainVideo'));
-            video.createAnnotation(text, time, locObj)
-            $('#annotationText').val('')
-            $('.message').text('Now Submit!!');
-            $('#finalSubmit').show()
         });
     });
 
     $('#finalSubmit').on('click', function(e) {
         e.preventDefault();
+
         $(this).hide();
         $('.message').text('');
         enableButtons(buttons);
         $('#submitAnnotation').show();
         $('#annotationHolder').off('click', function() {
-            console.log('holderRemoved');
+
         });
     });
 

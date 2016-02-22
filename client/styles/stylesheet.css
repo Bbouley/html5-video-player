@@ -16,15 +16,18 @@
 
 #annotationHolder {
     position: absolute;
-    border: 1px solid red;
-    height: 425px;
+    border: 2px solid black;
+    height: 400px;
     z-index: 2;
 }
 
 .annotation {
-    color : black;
-    background-color: red;
+    color : white;
+    background-color: rgba(0,0,0,0.4);
     z-index :3;
+    border-radius: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .videoHolder {
@@ -32,11 +35,10 @@
 }
 
 #mainVideo {
-    height: 425px;
+    height: 400px;
     z-index: 1;
     position: relative;
 }
-
 
 #seekingBar {
     height : 30px;
