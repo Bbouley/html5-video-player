@@ -22,7 +22,15 @@ var app = express();
 
 // *** database connection *** //
 
-mongoose.connect('mongodb://localhost/html5-video');
+// mongoose.connect('mongodb://localhost/html5-video');
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/html5-video';
+mongoose.connect(mongoURI, function(err, res) {
+  if(err) {
+    console.log('Error connecting to the database. ' + err);
+  } else {
+    console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
+  }
+});
 
 
 // *** View Engine *** //
