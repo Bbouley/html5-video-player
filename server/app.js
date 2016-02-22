@@ -22,7 +22,6 @@ var app = express();
 
 // *** database connection *** //
 
-// mongoose.connect('mongodb://localhost/html5-video');
 var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/html5-video';
 mongoose.connect(mongoURI, function(err, res) {
   if(err) {
