@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>{{Title}}</title>
+    <link rel="stylesheet" type="text/css" href="./styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./styles/skeleton.css">
     <link rel="stylesheet" type="text/css" href="./styles/stylesheet.css">
 </head>
 <body>
 
-    <h1>Videos For Days</h1>
+    <div class="container">
 
-    <button id="play">Play</button>
-    <button id="pause">Pause</button>
-    <button id="restart">Restart</button>
-    <button id="volumeUp">Volume +</button>
-    <button id="volumeDown">Volume -</button>
+    <h4>Videos For Days</h4>
 
-    <br><br>
+    <div class="row">
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+        <button id="restart">Restart</button>
+        <button id="volumeUp">Volume +</button>
+        <button id="volumeDown">Volume -</button>
 
-    <div id="seekingBar">
-        <div id="seekingTracker"></div>
+        <div id="seekingBar">
+            <div id="seekingTracker"></div>
+        </div>
+
     </div>
 
-    <br><br>
+        <div class="message u-full-width"></div>
 
-    <div class="message"></div>
+        <div id="videoHolder" class="u-full-width">
+            <div id="annotationHolder" class="u-full-width"></div>
+            <video height="425" src="http://video.bbemaildelivery.com/698ef524-730d-4afa-9e78-aea9d16ecf9f_LowDesktop.mp4" id="mainVideo">
+                Your browser doesn't support the video tag.
+            </video>
+        </div>
 
-    <div id="videoHolder">
-        <div id="annotationHolder"></div>
-        <video width="500" height="300" src="http://video.bbemaildelivery.com/698ef524-730d-4afa-9e78-aea9d16ecf9f_LowDesktop.mp4" id="mainVideo">
-            Your browser doesn't support the video tag.
-        </video>
+        <form class="clear" class="u-full-width">
+            <textarea class="u-full-width" placeholder="Add Annotations Here" id="annotationText" required></textarea>
+            <button type="submit" id="submitAnnotation">Annotate!!!</button>
+            <button id="finalSubmit">Submit</button>
+        </form>
+
     </div>
-
-    <form class="clear">
-        <textarea rows="5" cols="80" id="annotationText">
-        </textarea>
-        <input type="submit" id="submitAnnotation">
-        <button id="finalSubmit">Submit</button>
-    </form>
 
 
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>

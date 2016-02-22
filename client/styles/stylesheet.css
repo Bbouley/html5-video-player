@@ -1,23 +1,27 @@
-.message{
-    width : 500px;
-    height : 30px;
+.message {
+    height: 30px;
 }
 
 .clear{
     clear : both;
 }
 
+.container {
+    text-align: center;
+}
+
+.disabled {
+    background-color: gray;
+}
+
 #annotationHolder {
     position: absolute;
-    margin-top: 10px;
-    height :280px;
-    width : 500px;
-    border: 1px solid black;
+    border: 1px solid red;
+    height: 425px;
     z-index: 2;
 }
 
 .annotation {
-    /*position: absolute;*/
     color : black;
     background-color: red;
     z-index :3;
@@ -28,6 +32,7 @@
 }
 
 #mainVideo {
+    height: 425px;
     z-index: 1;
     position: relative;
 }
@@ -38,6 +43,7 @@
     width : 500px;
     border : black 1px solid;
     position : relative;
+    display: inline-block;
 }
 
 #seekingTracker {

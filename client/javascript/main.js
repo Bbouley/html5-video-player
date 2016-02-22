@@ -2,6 +2,8 @@ $(document).on('ready', function() {
     var interval;
     var interval2;
     var video = new Video('testTitle', $('#mainVideo').attr('src'))
+    var buttons = ['#play', '#pause', '#restart', '#volumeUp', '#volumeDown']
+
     $('#finalSubmit').hide();
 
 
@@ -51,6 +53,7 @@ $(document).on('ready', function() {
         $(this).hide();
         $('#mainVideo').get(0).pause()
         $('.message').text('Now Click on the video to add your annotation');
+        disableButtons(buttons);
          $('#annotationHolder').on('click', function(event) {
             event.preventDefault();
             var locObj = {
@@ -60,7 +63,6 @@ $(document).on('ready', function() {
             var text = $('#annotationText').val().trim();
             var time = getCurrentTime($('#mainVideo'));
             video.createAnnotation(text, time, locObj)
-            console.log(video);
             $('#annotationText').val('')
             $('.message').text('Now Submit!!');
             $('#finalSubmit').show()
@@ -71,6 +73,7 @@ $(document).on('ready', function() {
         e.preventDefault();
         $(this).hide();
         $('.message').text('');
+        enableButtons(buttons);
         $('#submitAnnotation').show();
         $('#annotationHolder').off('click', function() {
             console.log('holderRemoved');
@@ -79,11 +82,24 @@ $(document).on('ready', function() {
 
 
     $('#seekingBar').on('click', function(e) {
-        var currentPixPosition = e.pageX -this.offsetLeft
+        var currentPixPosition = e.pageX - $(this).offset().left;
         percentToTime(currentPixPosition, $('#mainVideo'));
         moveSeeker($('#mainVideo'), $('#seekingTracker'));
     });
 
+    function disableButtons (arr) {
+        arr.forEach(function(el) {
+            $(el).prop('disabled', true);
+            $(el).addClass('disabled');
+        });
+    };
+
+    function enableButtons (arr) {
+        arr.forEach(function(el) {
+            $(el).prop('disabled', false);
+            $(el).removeClass('disabled');
+        });
+    }
 
     // *** Helpers for scoped interval *** //
 
