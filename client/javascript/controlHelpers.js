@@ -14,14 +14,6 @@ function getCurrentTime(videoElement) {
     return videoElement.get(0).currentTime;
 };
 
-function createAnnotation(text, startTime, endTime) {
-    return {
-        annotationEl : '<p class="annotation">' + text + '<p>',
-        startTime : startTime,
-        endTime : startTime + 5
-    };
-};
-
 function timeToPercent (videoElement) {
     var currentTime = videoElement.get(0).currentTime;
     var duration = videoElement.get(0).duration;

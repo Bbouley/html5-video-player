@@ -7,12 +7,17 @@
     clear : both;
 }
 
-.annotationHolder {
+#annotationHolder {
     position: absolute;
     margin-top: 10px;
+    height :280px;
+    width : 500px;
+    border: 1px solid black;
+    z-index: 2;
 }
 
 .annotation {
+    position: absolute;
     color : black;
     background-color: red;
     z-index :3;

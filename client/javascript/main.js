@@ -41,16 +41,26 @@ $(document).on('ready', function() {
     $('#restart').on('click', function() {
         $('#mainVideo').get(0).currentTime = 0;
         $('#mainVideo').get(0).play();
+        moveSeeker($('#mainVideo'), $('#seekingTracker'));
     });
 
 
-    $('form').on('submit', function(e) {
+    $('#submitAnnotation').on('click', function(e) {
         e.preventDefault();
-        var text = $('#annotationText').val().trim();
-        var time = getCurrentTime($('#mainVideo'));
-        var annotation = createAnnotation(text, time);
-        video.addAnnotation(annotation);
-        $('#annotationText').val('')
+        $('.message').text('Now Click on the video to add your annotation');
+         $('#annotationHolder').one('click', function(event) {
+            event.preventDefault();
+            var locObj = {
+                left : event.pageY,
+                top : event.pageX
+            }
+            var text = $('#annotationText').val().trim();
+            var time = getCurrentTime($('#mainVideo'));
+            video.createAnnotation(text, time, locObj)
+            console.log(video);
+            $('#annotationText').val('')
+            $('.message').text('');
+        });
     });
 
 
@@ -74,7 +84,7 @@ $(document).on('ready', function() {
     };
 
     function annotationIntStart() {
-        var wrapperEl = $('.annotationHolder');
+        var wrapperEl = $('#annotationHolder');
         var videoEl = $('#mainVideo');
         interval2 = setInterval(function() {
              $('p').remove();
