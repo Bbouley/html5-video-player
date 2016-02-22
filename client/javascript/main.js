@@ -51,8 +51,8 @@ $(document).on('ready', function() {
          $('#annotationHolder').one('click', function(event) {
             event.preventDefault();
             var locObj = {
-                left : event.pageY,
-                top : event.pageX
+                left : event.pageX,
+                top : event.pageY
             }
             var text = $('#annotationText').val().trim();
             var time = getCurrentTime($('#mainVideo'));
