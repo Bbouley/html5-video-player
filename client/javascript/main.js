@@ -2,6 +2,7 @@ $(document).on('ready', function() {
     var interval;
     var interval2;
     var video = new Video('testTitle', $('#mainVideo').attr('src'))
+    $('#finalSubmit').hide();
 
 
     $('#play').on('click', function() {
@@ -47,8 +48,10 @@ $(document).on('ready', function() {
 
     $('#submitAnnotation').on('click', function(e) {
         e.preventDefault();
+        $(this).hide();
+        $('#mainVideo').get(0).pause()
         $('.message').text('Now Click on the video to add your annotation');
-         $('#annotationHolder').one('click', function(event) {
+         $('#annotationHolder').on('click', function(event) {
             event.preventDefault();
             var locObj = {
                 left : event.pageX,
@@ -59,7 +62,18 @@ $(document).on('ready', function() {
             video.createAnnotation(text, time, locObj)
             console.log(video);
             $('#annotationText').val('')
-            $('.message').text('');
+            $('.message').text('Now Submit!!');
+            $('#finalSubmit').show()
+        });
+    });
+
+    $('#finalSubmit').on('click', function(e) {
+        e.preventDefault();
+        $(this).hide();
+        $('.message').text('');
+        $('#submitAnnotation').show();
+        $('#annotationHolder').off('click', function() {
+            console.log('holderRemoved');
         });
     });
 
@@ -89,7 +103,7 @@ $(document).on('ready', function() {
         interval2 = setInterval(function() {
              $('p').remove();
             video.displayAnnotation(wrapperEl, videoEl);
-        }, 500);
+        }, 50);
     };
 
     function annotationIntClear() {

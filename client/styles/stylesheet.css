@@ -17,7 +17,7 @@
 }
 
 .annotation {
-    position: absolute;
+    /*position: absolute;*/
     color : black;
     background-color: red;
     z-index :3;
