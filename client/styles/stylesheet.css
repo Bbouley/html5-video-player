@@ -7,12 +7,16 @@
     clear : both;
 }
 
-.annotation {
+.annotationHolder {
     color : black;
     background-color: red;
-    z-index: 2;
-    position: fixed;
-    /*display: none;*/
+    z-index : 2;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.videoHolder {
+    position: relative;
 }
 
 #mainVideo {

@@ -69,11 +69,11 @@ $(document).on('ready', function() {
     };
 
     function annotationIntStart() {
-        var messageEl = $('.message');
+        var wrapperEl = $('.annotationHolder');
         var videoEl = $('#mainVideo');
         interval2 = setInterval(function() {
-             $('.annotation').remove();
-            video.displayAnnotation(messageEl, videoEl);
+             $('p').remove();
+            video.displayAnnotation(wrapperEl, videoEl);
         }, 500);
     };
 
