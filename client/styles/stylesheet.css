@@ -8,11 +8,14 @@
 }
 
 .annotationHolder {
-    color : black;
-    background-color: red;
-    z-index : 2;
     position: absolute;
     margin-top: 10px;
+}
+
+.annotation {
+    color : black;
+    background-color: red;
+    z-index :3;
 }
 
 .videoHolder {

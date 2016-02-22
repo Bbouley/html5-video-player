@@ -39,3 +39,14 @@ function moveSeeker (videoElement, seekingElement) {
     var percent = timeToPercent (videoElement);
     return percentToLocation (percent, seekingElement);
 };
+
+function pixelToPercent (pixels) {
+    return (pixels/490) * 100;
+};
+
+function percentToTime (pixels, videoElement) {
+    var percent = pixelToPercent(pixels)
+    var duration = videoElement.get(0).duration;
+    var clickTime = (percent/100) * duration;
+    return videoElement.get(0).currentTime = clickTime;
+};

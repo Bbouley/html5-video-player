@@ -54,6 +54,11 @@ $(document).on('ready', function() {
     });
 
 
+    $('#seekingBar').on('click', function(e) {
+        var currentPixPosition = e.pageX -this.offsetLeft
+        percentToTime(currentPixPosition, $('#mainVideo'));
+        moveSeeker($('#mainVideo'), $('#seekingTracker'));
+    });
 
 
     // *** Helpers for scoped interval *** //
