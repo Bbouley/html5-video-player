@@ -73,3 +73,21 @@ Build a player interface for an HTML5 video control that implements basic functi
 - Appending annotations - displaying over video html
 
 - Appending annotations - filtering time to display annotations at that time
+
+- Appending annotations - getting and saving location data
+
+- Appending annotations - looping through data to show at correct time and in correct place
+
+- Deployment - No 'npm start', mongolabs, PORT issue
+
+### Going Forward
+
+- Update UX to make site more user friendly to someone unfamiliar with codebase
+
+- Add option to set length of annotation
+
+- Add in UI to bring in any video file
+
+- Link to server to allow saving of videos with annotations, as well as edits of videos
+
+- Add option to view all other annotated videos
